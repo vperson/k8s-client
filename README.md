@@ -7,6 +7,7 @@
  - [ ] istio   
 
 ## Prometheus-operator
+### 获取Prometheus资源对象
 ```go
 func main() {
 	c, err := clientcmd.BuildConfigFromKubeconfigGetter("", KubeConfigGetter)
