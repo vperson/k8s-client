@@ -7,7 +7,7 @@
  - [ ] istio   
 
 ## Prometheus-operator
-```
+```go
 func main() {
 	c, err := clientcmd.BuildConfigFromKubeconfigGetter("", KubeConfigGetter)
 	if err != nil {
@@ -33,7 +33,7 @@ func main() {
 
 ## Kubernetes集群
 ### 获取deployment
-```
+```go
 func main() {
 	c, err := clientcmd.BuildConfigFromKubeconfigGetter("", KubeConfigGetter)
 	if err != nil {
