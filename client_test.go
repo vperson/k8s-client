@@ -28,3 +28,14 @@ func TestNewForConfig(t *testing.T) {
 		fmt.Printf("deployment : %s \n", i.Name)
 	}
 }
+
+func TestClientSet_Kubernetes(t *testing.T) {
+	c, err := KubeRestConfigGetter()
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	client, _ := NewForConfig(c)
+
+	client.Kubernetes()
+}

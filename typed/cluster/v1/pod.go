@@ -15,7 +15,7 @@ import (
 )
 
 type PodsGetter interface {
-	Pod(namespace string)
+	Pods(namespace string) PodsInterface
 }
 
 type PodsInterface interface {

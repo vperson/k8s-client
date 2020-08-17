@@ -8,7 +8,7 @@ import (
 type PrometheusMonitoringInterface interface {
 	PrometheusGetter
 	PrometheusRulesGetter
-	ServiceMonitorsGetter
+	//ServiceMonitorsGetter
 }
 
 type PrometheusMonitoring struct {
