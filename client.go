@@ -176,6 +176,8 @@ func dockerEnvIsExist() bool {
 
 	dockerEnv := "/.dockerenv"
 	_, err := os.Stat(dockerEnv)
-	exist := os.IsExist(err)
-	return exist
+	if err == nil {
+		return true
+	}
+	return false
 }
