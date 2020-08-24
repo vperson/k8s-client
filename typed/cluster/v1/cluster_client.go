@@ -17,8 +17,8 @@ type ClusterInterface interface {
 }
 
 type Cluster struct {
-	client *kubernetes.Clientset
-	restConfig      *rest.Config
+	client     *kubernetes.Clientset
+	restConfig *rest.Config
 }
 
 func NewForConfig(c *rest.Config) (*Cluster, error) {
@@ -30,8 +30,8 @@ func NewForConfig(c *rest.Config) (*Cluster, error) {
 	}
 
 	return &Cluster{
-		client: client,
-		restConfig:      c,
+		client:     client,
+		restConfig: c,
 	}, nil
 }
 
@@ -49,6 +49,10 @@ func (c *Cluster) Pods(namespace string) PodsInterface {
 
 func (c *Cluster) ConfigMap(namespace string) ConfigMapInterface {
 	return newConfigMap(c.client, namespace)
+}
+
+func (c *Cluster) HorizontalPodAutoScalers(namespace string) HorizontalPodAutoScalersInterface {
+	return newHorizontalPodAutoScaler(c.client, namespace)
 }
 
 func KubeConfigGetter() (*clientcmdapi.Config, error) {
