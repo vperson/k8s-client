@@ -65,7 +65,7 @@ kubernetes没有重启服务的功能,业务中如果更新了配置,服务本�
 * 服务是无状态的
 ```go
 func main() {
-	namespace := "dev1-xiaomai-server"
+	namespace := "dev1-xxxx-server"
 	deploymentName := "dev1-app-forum-latest"
 	
 	c, err := clientcmd.BuildConfigFromKubeconfigGetter("", KubeConfigGetter)
